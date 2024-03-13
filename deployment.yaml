@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: main-servlet-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: main-servlet
+  template:
+    metadata:
+      labels:
+        app: main-servlet
+    spec:
+      containers:
+      - name: main-servlet
+        image: shobithanayak24/dockerrepo:1.0
+        ports:
+        - containerPort: 8080 # Or any port you choose
